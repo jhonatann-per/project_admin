@@ -7,11 +7,12 @@ import { AuthProvider } from "./Context/AuthContext";
 const App = () => {
   return (
     <div>
-      <AuthProvider>
         <Router history={history}>
-          <Routes />
+          <AuthProvider>
+            <Routes />
+          </AuthProvider>
         </Router>
-      </AuthProvider>
+
     </div>
   );
 }

@@ -1,13 +1,18 @@
 import React, { createContext, useEffect, useState } from "react";
 import  api  from '../config/configApi';
+import { useNavigate } from 'react-router-dom';
+
 const Context = createContext();
 
-function AuthProvider({children}){
+
+function AuthProvider({ children }){
     // Aqui estamos verificando e autenticando se o usuário está logado
     // para permitir o mesmo acessar as páginas
     const [authenticated, setAuthenticated] = useState(false)
-
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate()
+    
+
     useEffect(() =>{
         const getLogin = async() =>{
             const token = localStorage.getItem('token')
@@ -23,14 +28,22 @@ function AuthProvider({children}){
     if(loading){
         return <h1>Carregando...</h1>
     }
+
+    async function signIn(sit){
+        setAuthenticated(sit)
+    }
+
    const handleLogout = () => {
-        console.log("sair")
+        setAuthenticated(false);
+        localStorage.removeItem('token');
+        api.defaults.headers.Authorization = undefined;
+        navigate('/')
     }
    
     return(
-        <Context.Provider value={{authenticated, handleLogout}}>
+        <Context.Provider value={{authenticated, handleLogout, signIn}}>
             {children}
         </Context.Provider>
     )
 }
-export { Context, AuthProvider}
+export { Context, AuthProvider };

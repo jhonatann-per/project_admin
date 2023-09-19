@@ -14,8 +14,8 @@ import {
 } from './styles';
 
 const Login = () => {
-  const {authenticated} = useContext( Context );
-  console.log(authenticated)
+  const {signIn} = useContext( Context );
+
   const [usuario, setUsuario] = useState('');
   const [password, setPassword] = useState('');
   const [mensagemServidor, setMensagemServidor] = useState('');
@@ -37,12 +37,12 @@ const Login = () => {
     // Aqui você pode adicionar a lógica de autenticação
     // Por exemplo, verificar se o email e a senha estão corretos
     // Se houver um erro, você pode definir a mensagem de erro usando setError
-  const headers = {
-    //"Content-type", "application/json" indica que o corpo da requisição
-    //  ou resposta está em formato JSON. Isso é usado para informar ao
-    //   servidor e ao cliente que o conteúdo deve ser interpretado como JSON.
-    'Content-type': 'application/json'
-    }
+    const headers = {
+      //"Content-type", "application/json" indica que o corpo da requisição
+      //  ou resposta está em formato JSON. Isso é usado para informar ao
+      //   servidor e ao cliente que o conteúdo deve ser interpretado como JSON.
+      'Content-type': 'application/json'
+      }
     api.post("/login", data, { headers })
     .then((res) => {
       // Verificar se o login foi bem-sucedido com base na resposta do servidor
@@ -50,6 +50,7 @@ const Login = () => {
         setMensagemServidor(res.data.mensagem);
         localStorage.setItem('token', JSON.stringify(res.data.token));
         api.defaults.headers.Authorization = `Bearer ${res.data.token}`;
+        signIn(true)
         // Redirecionar somente se o login for bem-sucedido
         navigate('/dashboard');
       } else {
@@ -64,11 +65,12 @@ const Login = () => {
     });
 };
 
+
 return (
     <Container>
       <FormContainer>
-        <h2>LOGIN</h2>
         <Form onSubmit={handleLogin}>
+          <h2>LOGIN</h2>
           <Input
             type="email"
             placeholder="Email"
@@ -81,7 +83,7 @@ return (
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button type="submit">Entrar</Button>
+          <Button type="submit">Acessar</Button>
         </Form>
         {mensagemServidor && <ErrorMessage>{mensagemServidor}</ErrorMessage>}
         <ForgotPassword>

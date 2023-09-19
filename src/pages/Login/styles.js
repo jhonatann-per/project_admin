@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import broly from '../../assets/broly.jpg'
 
 export const Container = styled.div`
   display: flex;
@@ -6,16 +7,27 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: black;
+  background-color: white;
+  background-image: url(${broly}); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Para cobrir todo o elemento com a imagem */
+  background-position: center; /* Para centralizar a imagem */
 `;
 
 export const FormContainer = styled.div`
-  background-color: #f0f0f0;
-  border-radius: 8px;
+  background-color: white;
+  border-radius: 2px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
+  box-shadow: 0 0 15px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
   max-width: 400px;
+  height: 40%;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  gap: 20px;
 
   h2{
     display: flex;
@@ -23,12 +35,6 @@ export const FormContainer = styled.div`
     justify-content: center;
     align-items: center;
   }
-`;
-
-export const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 `;
 
 export const Input = styled.input`
@@ -55,11 +61,17 @@ export const Button = styled.button`
 
 export const ForgotPassword = styled.div`
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
 `;
 
 export const ErrorMessage = styled.p`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5c2c7;
+  height: 35px;
+  border-radius: 3px;
   color: red;
   font-size: 14px;
-  margin-top: 5px;
+  margin-top: 15px;
 `;

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Container } from './styles';
 import { Context } from '../../Context/AuthContext';
+
 const Dashboard = () =>{
    const {handleLogout} = useContext(Context);
 
@@ -10,6 +11,6 @@ const Dashboard = () =>{
             <button onClick={handleLogout}>Sair</button>
         </Container>
     )
-}
+};
 
 export default Dashboard;
