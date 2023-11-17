@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
-  background-color: #333;
+  background-color: #2B2E31;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   left: 0;
-  position: fixed; /* Torna o header fixo no topo */
-  top: 0; /* Fixa o header no topo da página */
-  width: 100%; /* Define a largura como 100% da viewport */
-  z-index: 1000; /* Ajusta a ordem de sobreposição, se necessário */
+  position: fixed; 
+  top: 0; 
+  width: 100%; 
+  z-index: 1000; 
 `;
 
-export const ContentContainer = styled.div`
+export const Container = styled.div`
   padding-top: 60px; 
 `;
 
@@ -24,7 +24,7 @@ export const Title = styled.h1`
 `;
 
 export const Button = styled.button`
-  background-color: #007bff;
+  background-color: transparent;
   color: #fff;
   border: none;
   padding: 10px 20px;
