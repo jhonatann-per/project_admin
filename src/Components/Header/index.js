@@ -1,17 +1,18 @@
 import React from 'react';
-import { HeaderContainer, Title, Button, Container } from './styles';
+import { HeaderContainer, Title, Button, Container, DivButtons, ButtonWhats } from './styles';
 import { Link } from 'react-router-dom'
 const Header = () => {
   return (
     <Container>
       <HeaderContainer>
         <Title>Meu Aplicativo</Title>
-          <div>
+          <DivButtons>
             <Button>Planos</Button>
             <Link to="/dashboard"><Button>Dashboard</Button></Link>
-            <Link to="/listar"><Button>Usuário</Button></Link>
+            <Link to="/listar"><Button>Usuários</Button></Link>
             <Button>Empresa</Button>
-          </div>
+            <ButtonWhats>WhatsApp</ButtonWhats>
+          </DivButtons>
       </HeaderContainer>
     </Container>
     

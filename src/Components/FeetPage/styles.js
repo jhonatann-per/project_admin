@@ -2,13 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   text-align: center;
+  padding-top: 70px;
 `;
 
 export const ContentDiv = styled.div`
   display: flex;
   align-items: center;
   max-width: 100vw;
-  margin: 0 0 0 0;
+  padding-left: 60px;
+  margin-top: 40px;
+  justify-content: center;
 `;
 
 export const HeaderText = styled.div`
@@ -48,29 +51,17 @@ export const ImageContainer = styled.div`
 export const TextConteudo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 550px;
-`;
-
-export const TestDiv = styled.div`
-  display: flex;
   align-items: center;
   max-width: 30%;
-  margin-bottom: 20px;
-`;
-
-export const IconTest = styled.div`
-  margin-right: 25px; /* Adicione margem à direita para separar a imagem do texto */
-  margin-bottom: 135px;
-`;
-
-export const IconTesTwo = styled.div`
-  margin-right: 35px; /* Adicione margem à direita para separar a imagem do texto */
-  margin-bottom: 210px;
+  
 `;
 
 export const TextTest = styled.div`
   display: flex;
   flex-direction: column; /* Coloca os elementos em coluna */
+  width: 70%;
+  margin-right: 150px
+  
 `;
 
 
@@ -79,7 +70,7 @@ export const H4Text = styled.h4`
   font-size: 23px;
   text-align: left;
   white-space: nowrap;
-  margin-bottom: 5px;
+  padding-bottom: 32px;
 `;
 
 export const PText = styled.p`
@@ -88,4 +79,17 @@ export const PText = styled.p`
   font-size: 18px;
   margin-bottom: 10px;
   line-height: 1.8;
+`;
+
+export const StyledList = styled.ul`
+  list-style-type: disc; /* ou 'circle' ou 'square' dependendo do estilo de ponto desejado */
+  padding-left: 20px; /* ajuste o recuo conforme necessário */
+  text-align: left;
+  li {
+    color: #CBBACB;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    /* Adicione mais estilos conforme necessário */
+  }
 `;

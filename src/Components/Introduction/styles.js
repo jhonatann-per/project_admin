@@ -35,17 +35,22 @@ export const HeaderText = styled.div`
   }
 `;
 
+
+
+
 export const ImageWrapper = styled.div`
   position: relative;
   img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     image-rendering: pixelated;
   }
-  
+  /* @media (max-width: 1400px) {
+    max-width: 70%;
+  } */
   @media (max-width: 1280px) {
-    /* display: none; Remova esta linha para manter a visibilidade */
+    display: none;
   }
 `;
 
