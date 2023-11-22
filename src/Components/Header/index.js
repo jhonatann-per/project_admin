@@ -8,7 +8,7 @@ const Header = () => {
         <Title>Meu Aplicativo</Title>
           <DivButtons>
             <Button>Planos</Button>
-            <Link to="/dashboard"><Button>Dashboard</Button></Link>
+            <Link to="/home"><Button>Home</Button></Link>
             <Link to="/listar"><Button>Usuários</Button></Link>
             <Button>Empresa</Button>
             <ButtonWhats>WhatsApp</ButtonWhats>

@@ -6,8 +6,8 @@ import Introduction from '../../Components/Introduction';
 import BodyAuto from '../../Components/BodyAuto';
 import FeetPage from '../../Components/FeetPage';
 
-const Dashboard = () =>{
-//    const {handleLogout} = useContext(Context);
+const Home = () =>{
+   const {handleLogout} = useContext(Context);
 
     return(
         <Container>
@@ -15,10 +15,10 @@ const Dashboard = () =>{
             <Introduction />
             <BodyAuto />
             <FeetPage />
-            {/* <button onClick={handleLogout}>Sair</button> */}
+            <button onClick={handleLogout}>Sair</button>
         </Container>
     )
 };
 
 
-export default Dashboard;
+export default Home;

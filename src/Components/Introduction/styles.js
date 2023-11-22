@@ -2,25 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   text-align: center;
-  max-height: 70%;
-  margin-bottom: 295px;
-  padding: 20px;
-`;
-
-export const ContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  margin: 0 auto;
+  margin-bottom: 50px;
 `;
 
 export const HeaderText = styled.div`
-  position: absolute;
+  display: flex;
+  flex-direction: column;
   z-index: 1;
   color: #FFFFFF;
   font-size: 27px;
-
 
   @media (max-width: 1024px) {
     font-size: 20px;
@@ -35,21 +25,18 @@ export const HeaderText = styled.div`
   }
 `;
 
-
-
-
 export const ImageWrapper = styled.div`
-  position: relative;
   img {
-    max-width: 100%;
-    height: 100%;
-    display: block;
+    margin-top: 50px;
+    width: 60%;
+    height: auto;
+    object-fit: cover;
     image-rendering: pixelated;
   }
-  /* @media (max-width: 1400px) {
-    max-width: 70%;
-  } */
-  @media (max-width: 1280px) {
+  @media (max-width: 1400px) {
+    max-width: 100%;
+  }
+  @media (max-width: 1200px) {
     display: none;
   }
 `;

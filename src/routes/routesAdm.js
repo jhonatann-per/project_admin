@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Context } from "../Context/AuthContext";
 
 import Login from "../pages/Login";
-import Dashboard from "../pages/Dashboard";
+import Home from "../pages/Home";
 import Listar from "../pages/Listar";
 import Editar from "../Components/Editar";
 import Visualizar from "../Components/Visualizar";
@@ -17,8 +17,8 @@ const RoutesAdm = () => {
       <Route exact path="/" element={<Login />} />
       <Route
         exact
-        path="/dashboard"
-        element={authenticated ? <Dashboard /> : <Navigate to="/" />}
+        path="/home"
+        element={authenticated ? <Home /> : <Navigate to="/" />}
       />
       <Route
         exact
